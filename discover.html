@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find your launch partner in minutes. Browse vetted builders or marketers, swipe on fit, and match when interest is mutual.">
+  <meta property="og:title" content="Discover — ShipSwipe">
+  <meta property="og:description" content="Meet growth partners who match your terms — instant matches when you both swipe right.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="discover.html">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ShipSwipe — You build it. They grow it.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="discover.html">
+  <title>Discover — ShipSwipe</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true"></span>
+        ShipSwipe
+      </a>
+      <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="discover.html" aria-current="page">Discover</a>
+        <a href="matches.html">Matches</a>
+        <a href="profile.html">Profile</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container discover-layout">
+      <div class="page-intro">
+        <h1 id="discover-heading">Discover your next partner</h1>
+        <p>Swipe through profiles on the opposite side. Like someone who already liked you back for an instant match.</p>
+      </div>
+
+      <div id="need-profile" class="need-profile panel" hidden>
+        <h2>Profile required</h2>
+        <p>Create a profile on the home page before you can swipe. It takes under a minute and stays on your device.</p>
+        <a href="index.html" class="btn btn-primary">Create your profile</a>
+      </div>
+
+      <div id="guest-bar" class="guest-bar" hidden>
+        <span class="guest-bar-label">Just browsing — show me:</span>
+        <div class="guest-toggle" role="group" aria-label="Choose who to browse">
+          <button type="button" class="guest-pill" data-guest-view="marketer" aria-pressed="true">Marketers</button>
+          <button type="button" class="guest-pill" data-guest-view="builder" aria-pressed="false">Builders</button>
+        </div>
+        <a href="index.html#create-profile" class="guest-bar-cta">Create a profile to save matches →</a>
+      </div>
+
+      <p class="deck-context" data-deck-cue data-discover-ui hidden></p>
+
+      <div class="discover-toolbar" data-discover-ui>
+        <div class="form-field filter-field">
+          <label for="filter">Filter deck</label>
+          <select id="filter" name="filter">
+            <option value="all">All profiles</option>
+            <option value="terms:rev-share">Rev-share only</option>
+            <option value="terms:equity">Equity only</option>
+            <option value="terms:paid">Paid only</option>
+            <option value="terms:flexible">Flexible terms</option>
+          </select>
+        </div>
+        <button type="button" id="btn-undo" class="btn btn-secondary">Undo last swipe</button>
+      </div>
+
+      <div class="card card-style-reference" hidden aria-hidden="true"></div>
+
+      <section id="deck" class="deck decktransform" aria-live="polite" aria-labelledby="discover-heading" data-discover-ui></section>
+
+      <div class="swipe-actions" data-discover-ui>
+        <button type="button" id="btn-pass" class="btn-pass">Pass</button>
+        <button type="button" id="btn-like" class="btn-like">Like</button>
+      </div>
+
+      <div id="empty-state" class="empty-state" role="status" hidden>
+        <p class="empty-state-message">You have seen everyone for now. Check back later or update your profile.</p>
+        <div class="empty-state-actions">
+          <button type="button" class="btn btn-secondary" data-action="clear-filter" hidden>Clear filter</button>
+          <a href="profile.html" class="btn btn-secondary">Update profile</a>
+        </div>
+      </div>
+
+      <div id="detail-backdrop" class="detail-backdrop" hidden></div>
+
+      <aside id="detail-panel" class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-heading" hidden>
+        <div class="detail-panel-inner">
+          <button type="button" class="detail-close" data-action="close-detail" aria-label="Close details">×</button>
+          <h2 id="detail-heading">Profile details</h2>
+          <p class="detail-name" data-field="name"></p>
+          <p class="detail-label" data-field="label"></p>
+          <p class="detail-bio" data-field="bio"></p>
+          <dl class="detail-fields">
+            <dt>Building</dt>
+            <dd data-field="building"></dd>
+            <dt>Looking for</dt>
+            <dd data-field="lookingFor"></dd>
+            <dt>Terms</dt>
+            <dd data-field="terms"></dd>
+          </dl>
+          <div data-field="tags"></div>
+          <button type="button" class="btn btn-secondary" data-action="close-detail">Close</button>
+        </div>
+      </aside>
+
+      <div id="match-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="match-modal-heading" hidden>
+        <div class="modal-card">
+          <button type="button" class="modal-close" data-action="close" aria-label="Close match dialog">×</button>
+          <h2 id="match-modal-heading" class="match-modal-title">It's a match!</h2>
+          <p class="match-modal-body">You both swiped right. Connect and start planning your launch together.</p>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-primary" data-action="connect">Connect</button>
+            <button type="button" class="btn btn-secondary" data-action="close">Keep swiping</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>ShipSwipe — swipe your way to a builder-marketer partnership.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="how-it-works.html">How it works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

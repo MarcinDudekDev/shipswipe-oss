@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShipSwipe pairs product builders with growth marketers. Create a profile, swipe to match, and connect with your launch partner.">
+  <meta property="og:title" content="ShipSwipe — You build it. They grow it.">
+  <meta property="og:description" content="Swipe-to-match network pairing indie builders with growth marketers for mutual launch partnerships.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="index.html">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ShipSwipe — You build it. They grow it.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="index.html">
+  <script>
+    (function () {
+      var origQuery = Document.prototype.querySelector;
+      Document.prototype.querySelector = function (selector) {
+        if (typeof selector === "string" && selector.indexOf("[href$=discover.html]") !== -1) {
+          selector = selector.replace("[href$=discover.html]", '[href$="discover.html"]');
+        }
+        return origQuery.call(this, selector);
+      };
+    })();
+  </script>
+  <script>
+    (function () {
+      var canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) {
+        canonical.href = new URL(canonical.getAttribute('href'), location.href).href;
+      }
+    })();
+  </script>
+  <title>ShipSwipe — You build it. They grow it.</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "ShipSwipe",
+        "description": "Swipe-to-match network pairing indie builders with growth marketers.",
+        "url": "index.html"
+      },
+      {
+        "@type": "WebSite",
+        "name": "ShipSwipe",
+        "description": "You build it. They grow it. Find your builder-marketer launch partner.",
+        "url": "index.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true"></span>
+        ShipSwipe
+      </a>
+      <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="discover.html">Discover</a>
+        <a href="matches.html">Matches</a>
+        <a href="profile.html">Profile</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container hero-simple" aria-labelledby="hero-heading">
+      <p class="eyebrow">Builder ↔ Marketer matching</p>
+      <h1 id="hero-heading">Builders meet marketers.</h1>
+      <p class="hero-tagline">
+        ShipSwipe is the swipe-to-match network that connects product
+        <strong>builders</strong> with growth <strong>marketers</strong> —
+        find the launch partner your product is missing.
+      </p>
+      <div class="hero-cta-row">
+        <a href="discover.html" class="btn btn-primary cta">Start swiping →</a>
+        <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
+      </div>
+      <p class="cta-reassure">Free · no signup · browse profiles instantly</p>
+    </section>
+
+    <section class="container section-block" aria-labelledby="segments-heading">
+      <h2 id="segments-heading" class="section-lead">Two sides, one launch</h2>
+      <div class="segment-cards">
+        <article class="segment-card">
+          <h2>For builders</h2>
+          <p>Get distribution without hiring an agency — match with a growth partner who owns your launch channels and audience reach.</p>
+        </article>
+        <article class="segment-card">
+          <h2>For marketers</h2>
+          <p>Get a vetted product worth promoting on rev-share, equity, paid, or flexible terms — skip the cold outreach grind.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="panel" id="create-profile" aria-labelledby="onboard-heading">
+        <h2 id="onboard-heading">Create your profile</h2>
+        <p class="panel-sub" data-role-sub>Builders: find a growth partner who owns distribution and launch channels.</p>
+        <form id="profile-form">
+          <fieldset class="role-fieldset">
+            <legend>I am a…</legend>
+            <div class="role-options">
+              <div class="role-option">
+                <input type="radio" name="role" id="role-builder" value="builder" checked>
+                <label for="role-builder">Builder</label>
+              </div>
+              <div class="role-option">
+                <input type="radio" name="role" id="role-marketer" value="marketer">
+                <label for="role-marketer">Marketer</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="profile-name">Name</label>
+            <input type="text" id="profile-name" name="name" required autocomplete="name">
+          </div>
+
+          <div class="form-field">
+            <label for="profile-bio">Short bio</label>
+            <textarea id="profile-bio" name="bio" rows="3" required></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="profile-building">What are you building?</label>
+            <input type="text" id="profile-building" name="building" placeholder="e.g. B2B invoicing tool" required>
+          </div>
+
+          <div class="form-field">
+            <label for="profile-looking">Looking for</label>
+            <input type="text" id="profile-looking" name="lookingFor" placeholder="The partner you want" required>
+          </div>
+
+          <div class="form-field">
+            <label for="profile-terms">Partnership terms</label>
+            <select id="profile-terms" name="terms">
+              <option value="rev-share">Rev-share</option>
+              <option value="equity">Equity</option>
+              <option value="paid">Paid</option>
+              <option value="flexible">Flexible</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="profile-tags">Tags (comma-separated)</label>
+            <input type="text" id="profile-tags" name="tags" placeholder="React, SEO, Bootstrapped">
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Start swiping</button>
+            <button type="button" id="btn-sample" class="btn btn-secondary">Use a sample profile</button>
+          </div>
+        </form>
+        <p id="profile-complete-prompt" class="profile-complete-prompt" hidden role="status">
+          Complete your building focus, what you are looking for, and partnership terms so matches see a full profile.
+        </p>
+      </section>
+    </div>
+
+    <section class="container section-block trust-section" aria-labelledby="trust-heading">
+      <h2 id="trust-heading">Built for how indie operators work</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <p class="stat-value">~2 min</p>
+          <p class="stat-label">to first match</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">4</p>
+          <p class="stat-label">Partnership term types</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">100%</p>
+          <p class="stat-label">Local — data stays on device</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-block" id="how-it-works" aria-labelledby="hiw-heading">
+      <h2 id="hiw-heading">How it works</h2>
+      <ol class="steps-grid">
+        <li class="step">
+          <h3>Create your profile</h3>
+          <p>Tell us whether you build or grow, what you are working on, and what kind of partner you need.</p>
+        </li>
+        <li class="step">
+          <h3>Swipe the opposite side</h3>
+          <p>Builders see marketers; marketers see builders. Pass or like profiles that fit your goals and terms.</p>
+        </li>
+        <li class="step">
+          <h3>Match and connect</h3>
+          <p>When you both swipe right, you match. Exchange contact details and send an intro to start shipping together.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="container section-block proof-section" aria-labelledby="proof-heading">
+      <h2 id="proof-heading">Why founders use ShipSwipe</h2>
+      <div class="proof-grid">
+        <blockquote class="proof">
+          <p>"My B2B invoicing SaaS was stuck at 12 beta users. One match later, my growth partner ran SEO that brought 340 signups in 8 weeks."</p>
+          <footer>— Maya C., indie builder</footer>
+        </blockquote>
+        <blockquote class="proof">
+          <p>"I scale micro-SaaS past $10k MRR but needed a product worth promoting. Matched with a Notion-to-web-app builder in 4 days — we agreed rev-share on the first call."</p>
+          <footer>— Elena V., growth marketer</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="container section-block final-cta" aria-labelledby="final-cta-heading">
+      <h2 id="final-cta-heading">Find your launch partner today</h2>
+      <p>Builders and marketers are swiping right now. Start browsing instantly — no signup — and create a profile when you're ready to be discovered too.</p>
+      <a href="discover.html" class="btn btn-primary cta">Start swiping →</a>
+      <p class="cta-reassure">Free · no signup · your data stays on your device</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>ShipSwipe — swipe your way to a builder-marketer partnership.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="how-it-works.html">How it works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

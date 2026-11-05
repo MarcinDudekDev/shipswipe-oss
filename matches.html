@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your ShipSwipe matches and connect with builders or marketers who swiped right on you too.">
+  <meta property="og:title" content="Matches — ShipSwipe">
+  <meta property="og:description" content="View your mutual matches and connect with builders or marketers on ShipSwipe.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="matches.html">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ShipSwipe — You build it. They grow it.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="matches.html">
+  <title>Matches — ShipSwipe</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true"></span>
+        ShipSwipe
+      </a>
+      <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="discover.html">Discover</a>
+        <a href="matches.html" aria-current="page">Matches</a>
+        <a href="profile.html">Profile</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container matches-layout">
+      <div class="page-intro">
+        <h1>Your matches</h1>
+        <p>Mutual right-swipes land here. Connect with partners ready to ship and grow together.</p>
+        <a class="btn btn-primary" href="discover.html">Keep discovering</a>
+      </div>
+
+      <div id="need-profile" class="need-profile panel" hidden>
+        <h2>Profile required</h2>
+        <p>Create a profile on the home page to see your matches.</p>
+        <a href="index.html" class="btn btn-primary">Create your profile</a>
+      </div>
+
+      <div id="matches-list" class="matches-list" aria-live="polite" data-matches-ui></div>
+
+      <section id="connect-panel" class="connect-panel panel" aria-labelledby="connect-heading" hidden>
+        <h2 id="connect-heading">Connect</h2>
+        <p id="connect-contact" class="connect-contact"></p>
+        <div class="form-field">
+          <label for="intro-message">Intro message</label>
+          <textarea id="intro-message" name="intro" rows="4" placeholder="Write a short intro to your match…"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary" data-action="send-intro">Send intro</button>
+          <button type="button" class="btn btn-secondary" data-action="close-connect">Close</button>
+        </div>
+        <p id="intro-sent" class="intro-sent" role="status" hidden></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>ShipSwipe — swipe your way to a builder-marketer partnership.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="how-it-works.html">How it works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
